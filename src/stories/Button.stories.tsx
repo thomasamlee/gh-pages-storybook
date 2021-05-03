@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-
-import { Button, ButtonProps } from "./Button";
+import { Button } from "antd";
+import { ButtonProps } from "antd/lib/button";
 
 export default {
   title: "Example/Button",
@@ -15,25 +15,6 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
-  label: "Button",
+  type: "primary",
+  children: "Button",
 };
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: "Button",
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
-  label: "Button",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-  label: "Button",
-};
-
-// This change will trigger the storybook build action
