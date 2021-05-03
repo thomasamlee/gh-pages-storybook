@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -19,8 +21,13 @@ module.exports = {
         lessOptions: {
           javascriptEnabled: true,
           modifyVars: {
-            "primary-color": "#1DA57A",
-            "border-radius-base": "5px",
+            hack: `true; @import "${path.resolve(
+              __dirname,
+              "../",
+              "theme.less"
+            )}";`,
+            // "primary-color": "#1DA57A",
+            // "border-radius-base": "5px",
           },
         },
       },
